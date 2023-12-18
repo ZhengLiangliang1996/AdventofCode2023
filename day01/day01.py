@@ -7,7 +7,7 @@
 # Distributed under terms of the MIT license.
 import os 
 
-PATH = '/Users/liangliang/Desktop/AdventofCode2022/2023'
+PATH = '/Users/liangliang/Desktop/AdventofCode2023'
 
 def read_txt(filename):
     with open(filename) as file:
