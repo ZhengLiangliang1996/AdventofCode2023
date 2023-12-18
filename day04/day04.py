@@ -34,14 +34,18 @@ def solution1():
 def solution2():
     fn = os.path.join(PATH, 'day04', 'input.txt')
     l = read_txt(fn)
+    s = defaultdict(int)
     for i in range(len(l)-1):
         p1 = l[i].split(':')[1].split('|')
         l1 = list(map(int, p1[0].strip().split()))
         l2 = list(map(int, p1[1].strip().split()))
         a = set(l1).intersection(set(l2))
+        s[i] += 1
         if len(a) >= 1:
-            s += 2**(len(a)-1)
-    print(s)
+            for j in range(i+1, i+1+len(a)):
+                s[j] += s[i]
+     
+    print(sum(s.values()))
 
-solution1()
+solution2()
 
